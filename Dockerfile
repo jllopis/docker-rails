@@ -1,4 +1,4 @@
-FROM ruby:2.1.1
+FROM jllopis/ruby:2.1.1
 MAINTAINER Joan Llopis <jllopisg@gmail.com>
 
 ENV RAILS_VERSION 4.0.0
