@@ -22,8 +22,8 @@ RUN gem install rails --no-ri --no-rdoc -v $RAILS_VERSION
 ENTRYPOINT ["/usr/local/bin/run.sh"]
 
 # app/ directory should contain the application to be inltalled
-ONBUILD ADD app/ $RAILS_APP_ROOT
-ONBUILD RUN cd $RAILS_APP_ROOT && bundle install
+ONBUILD ADD app/ /opt/app
+ONBUILD RUN cd /opt/app && bundle install
 ONBUILD ADD run.sh /usr/local/bin/run.sh
 ONBUILD RUN chmod +x /usr/local/bin/run.sh
 
