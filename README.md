@@ -2,7 +2,7 @@
 
 # Version
 
-Rails 4.0.0
+Rails 4.1.7
 
 # Build from repository
 
@@ -25,13 +25,13 @@ It does not define a **CMD** but **it defines** a default **ENTRYPOINT** which i
 
 If you want to start the image you can do
 
-   $ docker run -t -i --entrypoint /bin/bash rails:4.0.0 -l
+   $ docker run -t -i --entrypoint /bin/bash rails:4.1.7 -l
 
 # How to use it
 
 To build from it, you need in the same directory of this Dockerfile the following:
 
-- **app/** directory which contains your rails application (ex: git clone git@gitorious.server.com:observer.git app). This directory will be added to
+- **.** directory which contains your rails application (ex: git clone git@gitorious.server.com:observer.git && cd observer). This directory will be added to
            the image in **/opt/app**
 - **run.sh** which is a shell script that will run on container start and thus will run your app and its dependencies.
 
