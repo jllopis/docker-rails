@@ -1,7 +1,7 @@
-FROM jllopis/ruby:2.1.1
+FROM jllopis/ruby:2.1.4
 MAINTAINER Joan Llopis <jllopisg@gmail.com>
 
-ENV RAILS_VERSION 4.0.0
+ENV RAILS_VERSION 4.1.7
 
 # Rails app home dir
 ENV RAILS_APP_ROOT /opt/app
