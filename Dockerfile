@@ -21,14 +21,14 @@ RUN gem install rails --no-ri --no-rdoc -v $RAILS_VERSION
 
 ENTRYPOINT ["/usr/local/bin/run.sh"]
 
-# app/ directory should contain the application to be inltalled
-ONBUILD ADD app/ /opt/app
+# . directory should contain the application to be installed, so you must build inside your source directory (where this Dockerfile stand)
+ONBUILD ADD . /opt/app
 ONBUILD RUN cd /opt/app && bundle install
 ONBUILD ADD run.sh /usr/local/bin/run.sh
 ONBUILD RUN chmod +x /usr/local/bin/run.sh
 
 # To build from this image, you must provide in the same directory of this Dockerfile the following:
-# - app/ directory which contains your rails application (ex: git clone git@gitorious.server.com:observer.git app)
+# - . directory which contains your rails application (ex: git clone git@gitorious.server.com:observer.git && cd observer)
 # - run.sh which is a shell script that will run on container start and thus will run your app and its dependencies
 #
 # You should also EXPOSE the ports needed
