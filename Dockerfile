@@ -11,8 +11,8 @@ RUN apt-get -qqy install libsqlite3-dev
 
 # Install Rails
 # but first, rails needs a Javascript runtime...
-RUN curl -sL https://deb.nodesource.com/setup | sudo bash - && \
-    apt-get -qqy install nodejs
+#RUN curl -ksL https://deb.nodesource.com/setup | sudo bash - && \
+RUN apt-get -qqy install nodejs
 
 RUN gem install rails --no-ri --no-rdoc -v $RAILS_VERSION
 
