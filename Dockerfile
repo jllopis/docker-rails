@@ -11,9 +11,9 @@ RUN apt-get -qqy install libsqlite3-dev
 
 # Install Rails
 # but first, rails needs a Javascript runtime...
-RUN add-apt-repository -y ppa:chris-lea/node.js && \
-    apt-get -qq update && \
+RUN curl -sL https://deb.nodesource.com/setup | sudo bash - && \
     apt-get -qqy install nodejs
+
 RUN gem install rails --no-ri --no-rdoc -v $RAILS_VERSION
 
 # Install Passenger
